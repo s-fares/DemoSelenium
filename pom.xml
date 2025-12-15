@@ -28,6 +28,11 @@
     		<version>7.7.1</version>
     		<scope>test</scope>
 		</dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.5.3</version> <!-- Use latest version -->
+        </dependency>
     </dependencies>
 
 
@@ -39,8 +44,8 @@
 
     <properties>
 		 <!-- Compiler source and target info -->
-         <maven.compiler.source>19</maven.compiler.source> 
-         <maven.compiler.target>19</maven.compiler.target>
+         <maven.compiler.source>17</maven.compiler.source> 
+         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
 </project>
