@@ -3,5 +3,5 @@
 .project
 .settings/
 target/
-.vscode
-.test-output
+vscode
+test-output
