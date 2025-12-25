@@ -34,18 +34,25 @@ public class BaseTest {
         extent.flush();
     }
 
-    @BeforeMethod
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        options.addArguments("--disable-gpu");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--incognito");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--window-size=1920,1080");
-        driver = new ChromeDriver(options);
-    }
+@BeforeMethod
+public void setUp() {
+    // 1. Point to the driver you installed via apt-get
+    System.setProperty("webdriver.chrome.driver", "/usr/bin/chromium-driver");
+
+    ChromeOptions options = new ChromeOptions();
+    
+    // 2. Point to the Chromium binary you installed
+    options.setBinary("/usr/bin/chromium"); 
+
+    // 3. Essential flags for Docker
+    options.addArguments("--headless");
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-dev-shm-usage");
+    options.addArguments("--disable-gpu");
+    options.addArguments("--window-size=1920,1080");
+
+    driver = new ChromeDriver(options);
+}
 
     @AfterMethod
     public void tearDown() {
