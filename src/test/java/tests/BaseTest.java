@@ -47,6 +47,7 @@ public void setUp() {
     // 3. Essential flags for Docker
     options.addArguments("--headless");
     options.addArguments("--no-sandbox");
+    options.addArguments("--incognito");
     options.addArguments("--disable-dev-shm-usage");
     options.addArguments("--disable-gpu");
     options.addArguments("--window-size=1920,1080");
